@@ -1,0 +1,54 @@
+{followers.map((account) => {
+return (
+<div key={account.id} className="item">
+  {/* {console.log(account)} */}
+  <img src={getImage(account)} alt="profile_pic" className="my-image " />
+  <h4>{account.attributes.name}</h4>
+  <h4>{account.attributes.email}</h4>
+
+</div>
+);
+})}
+
+
+
+followers.map((account) => {
+return (
+<div key={account.id} className="item">
+  {/* {console.log(account)} */}
+  <img src={getImage(account)} alt="profile_pic" className="my-image " />
+  <h4>{account.attributes.name}</h4>
+  <h4>{account.attributes.email}</h4>
+</div>
+);
+})
+
+
+
+{console.log(followers)}
+{ followers.length===0 ? <h4>Zero Followers</h4> : <h4>no</h4>}
+
+
+<div className="row  justify-content-center">
+  <div className="col-md-8 col-lg-6">
+    <div className="card mb-3 ">
+      <div className="card-body  ">
+        <div className=" row mt-2 align-items-center justify-content-start ">
+          <div className="col-2 col-md-2 ">
+            <img src={account.image.thumbnail.url} alt="profile_pic" className="profile_pic rounded-circle" />
+          </div>
+          <div className="col-6 col-md-6  ">
+            <div>{account.name}</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+import { useParams } from "react-router-dom";
+ const  {id}  = useParams();
+
