@@ -8,8 +8,8 @@ function ShowStory() {
   const [story, setStory] = useState([]);
   const [load, setLoad] = useState(true);
 
-  const API_URL = `http://localhost:3000/api/v1/stories/${id}`;
-  // const API_URL = `https://instagram-clone-pk.herokuapp.com/api/v1/stories/${id}`;
+  // const API_URL = `http://localhost:3000/api/v1/stories/${id}`;
+  const API_URL = `https://instagram-clone-pk.herokuapp.com/api/v1/stories/${id}`;
 
   const getAPIData = useCallback(() => {
     return axios.get(API_URL).then((response) => response.data);

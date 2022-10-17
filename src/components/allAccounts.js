@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 import image from "../assets/default.png"
 
 
-const API_URL = "http://localhost:3000/api/v1/profile";
-// const API_URL = "https://instagram-clone-pk.herokuapp.com/api/v1/profile";
+// const API_URL = "http://localhost:3000/api/v1/profile";
+const API_URL = "https://instagram-clone-pk.herokuapp.com/api/v1/profile";
 
 function getAPIData() {
   return axios.get(API_URL).then((response) => response.data);

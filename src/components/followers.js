@@ -15,14 +15,12 @@ function Followers() {
 
   const { id } = useParams();
 
-  const API_URL = `http://localhost:3000/api/v1/followers/${id}`;
-  // const API_URL = `https://instagram-clone-pk.herokuapp.com/api/v1/followers/${id}`;
+  // const API_URL = `http://localhost:3000/api/v1/followers/${id}`;
+  const API_URL = `https://instagram-clone-pk.herokuapp.com/api/v1/followers/${id}`;
 
   const getAPIData = useCallback(() => {
     return axios.get(API_URL).then((response) => response.data);
   }, [API_URL]);
-
-
 
 
   const [followers, setFollowers] = useState([]);
@@ -44,8 +42,8 @@ function Followers() {
     <div className="text-center">
       <h1 className="mt-5">All Followers</h1>
       <br />
-      {console.log(followers)}
-      {followers.length === 0 ? (
+      {/* {console.log(followers)} */}
+      { followers.length === 0 ? (
         <h4>Zero Followers</h4>
       ) : (
         followers.map((account) => {

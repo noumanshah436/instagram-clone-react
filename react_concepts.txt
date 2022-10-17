@@ -1,0 +1,68 @@
+
+
+Virtual Dom:
+
+The virtual DOM (VDOM) is a programming concept where an ideal, or “virtual”, representation of a UI is kept in memory 
+and synced with the “real” DOM by a library such as ReactDOM. 
+This process is called reconciliation.
+
+
+*****************
+
+
+
+
+What is re-render in React?
+When talking about React performance, there are two major stages that we need to care about:
+
+initial render - 
+happens when a component first appears on the screen
+
+
+re-render -
+ second and any consecutive render of a component that is already on the screen
+
+Re-render happens when React needs to update the app with some new data. Usually, this happens as a result of a user interacting with the app or some external data coming through via an asynchronous request or some subscription model.
+
+Non-interactive apps that don’t have any asynchronous data updates will never re-render, and therefore don’t need to care about re-renders performance optimization.
+
+*****************
+
+
+
+
+Based on what, react re-renders a page:
+
+React schedules a render every time the state of a component changes. 
+Scheduling a render means that this doesn't happen immediately. 
+React will try to find the best moment for this. Changing the state means that React triggers an update when we call the setState function (in React hooks, you would use useState ).
+
+Re-render happens when React needs to update the app with some new data. Usually, this happens as a result of a user interacting with the app or some external data coming through via an asynchronous request or some subscription model.
+
+
+**************************
+
+Why is a key prop necessary for a list rendering?
+
+Keys are something that helps react to identify which items have changed, are added, or are removed. Keys should be given to the elements inside the array to give the elements a stable identity while they are rendered.
+
+
+***************************
+https://stackoverflow.com/questions/53441584/how-to-re-render-parent-component-when-anything-changes-in-child-component
+
+***************************
+
+life cycle:
+
+https://www.youtube.com/watch?v=abjeWy4sZiU
+
+https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+
+
+
+
+
+
+
+

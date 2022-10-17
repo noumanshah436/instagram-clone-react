@@ -3,8 +3,8 @@ import Story from "./story"
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const API_URL = "http://localhost:3000/api/v1/stories";
-// const API_URL = "https://instagram-clone-pk.herokuapp.com/api/v1/stories";
+// const API_URL = "http://localhost:3000/api/v1/stories";
+const API_URL = "https://instagram-clone-pk.herokuapp.com/api/v1/stories";
 
 function getAPIData() {
   return axios.get(API_URL).then((response) => response.data);
