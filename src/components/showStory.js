@@ -1,52 +1,52 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import axios from "axios";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import axios from 'axios'
 
-function ShowStory() {
-  const { id } = useParams();
-  const [story, setStory] = useState([]);
-  const [load, setLoad] = useState(true);
+function ShowStory () {
+  const { id } = useParams()
+  const [story, setStory] = useState([])
+  const [load, setLoad] = useState(true)
 
   // const API_URL = `http://localhost:3000/api/v1/stories/${id}`;
-  const API_URL = `https://instagram-clone-pk.herokuapp.com/api/v1/stories/${id}`;
+  // const API_URL = `https://instagram-clone-pk.herokuapp.com/api/v1/stories/${id}`
+  const API_URL = process.env.REACT_APP_ALL_STORIES + `/${id}`
 
   useEffect(() => {
     axios
       .get(API_URL)
       .then((response) => {
-        setStory(response.data.data);
-        setLoad(false);
+        setStory(response.data.data)
+        setLoad(false)
       })
-      .catch((error) => console.log(error));
-  }, [API_URL]);
+      .catch((error) => console.log(error))
+  }, [API_URL])
 
   return (
     <>
       {load || (
-        <div className="card border-0 mt-3 ">
-          <div className="card-body   ">
-            <div className=" row mt-2 align-items-center justify-content-start ">
+        <div className='card border-0 mt-3 '>
+          <div className='card-body   '>
+            <div className=' row mt-2 align-items-center justify-content-start '>
               <img
                 src={story.attributes.account.image.thumbnail.url}
-                alt="profile_pic"
-                className="mr-3 profile_pic rounded-circle"
+                alt='profile_pic'
+                className='mr-3 profile_pic rounded-circle'
               />
               <div>{story.attributes.account.name}</div>
             </div>
           </div>
           <img
             src={story.attributes.image.standard.url}
-            alt=""
-            className="my-5 w-100  "
+            alt=''
+            className='my-5 w-100  '
           />
         </div>
       )}
     </>
-  );
+  )
 }
 
-export default ShowStory;
+export default ShowStory
 
 // {
 // id: 20,

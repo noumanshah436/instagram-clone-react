@@ -1,17 +1,15 @@
 
-import MyRoutes from "./components/myRoutes";
+import MyRoutes from './components/myRoutes'
 
-
-function App() {
-
+function App () {
   return (
-    <div className="App">
+    <div className='App'>
       <MyRoutes />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
 
 // import logo from './logo.svg';
 // import './App.css';
