@@ -27,14 +27,10 @@ function Accounts() {
       // console.log(items);
       if (mounted) {
         setAccounts(items.data);
-
-
       }
     });
     return () => (mounted = false);
   }, []);
-
-  // console.log(accounts);
 
   return (
     <div className="text-center">

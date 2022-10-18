@@ -16,8 +16,7 @@ function Stories() {
 
   useEffect(() => {
     let mounted = true;
-    getAPIData().then((items) => {
-      console.log(items);
+    getAPIData().then((items) => { 
       if (mounted) {
         setStories(items.data);
       }

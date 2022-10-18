@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -11,27 +11,16 @@ function ShowStory() {
   // const API_URL = `http://localhost:3000/api/v1/stories/${id}`;
   const API_URL = `https://instagram-clone-pk.herokuapp.com/api/v1/stories/${id}`;
 
-  const getAPIData = useCallback(() => {
-    return axios.get(API_URL).then((response) => response.data);
-  }, [API_URL]);
-
   useEffect(() => {
-    let mounted = true;
-    getAPIData()
-      .then((item) => {
-        console.log("item");
-        console.log(item);
-        if (mounted) {
-          setStory(item.data);
-          setLoad(false);
-        }
+    axios
+      .get(API_URL)
+      .then((response) => {
+        setStory(response.data.data);
+        setLoad(false);
       })
       .catch((error) => console.log(error));
-    return () => (mounted = false);
-  }, [getAPIData]);
+  }, [API_URL]);
 
-  console.log("hello");
-  console.log(story);
   return (
     <>
       {load || (
