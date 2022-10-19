@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import image from "../assets/default.png";
-
+import Spinner from "./spinner";
 
 function getImage(account) {
   return account.attributes.image.url === "default.png"
@@ -27,7 +27,7 @@ function Accounts() {
   return (
     <div className="text-center">
       <h1 className="mt-5">All Accounts</h1>
-
+      <Spinner accounts={accounts} />
       {accounts.map((account) => {
         return (
           <div key={account.id} className="item">
